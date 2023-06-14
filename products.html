@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surrey Steels</title>
+    <link rel="shortcut icon" href="./favicon.svg" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body x-data="data()" class="text-base tracking-tight antialiased">
+    <!-- Header Section -->
+    <header class="bg-black py-4 md:pt-5 md:pb-1 lg:py-3 top-0 z-50">
+        <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+            <div class="relative flex py-1.5 justify-between items-center">
+                <div class="flex md:absolute lg:static top-0">
+                    <a href="index.html"><img class="w-48 lg:w-80" src="assets/images/svg/logo.svg" alt="logo" /></a>
+                </div>
+                <div class="flex flex-col items-end gap-y-3 md:w-full">
+                    <a class="text-3xl font-bold text-white duration-200 hover:text-primary-500 hidden md:block" href="tel:02089474722">02089474722</a>
+                    <div @click.away="isMenuOpen = false; isSubMenuOpen = ''" x-show="isMenuOpen || window.innerWidth > 767" x-transition class="origin-top absolute bg-black md:bg-transparent md:w-full lg:w-auto top-full -left-4 -right-4 z-40 flex flex-col overflow-hidden transition-all duration-300 md:static lg:ml-auto md:max-h-full md:items-center md:justify-center md:overflow-visible">
+                        <ul class="flex flex-col gap-2 lg:gap-4 xl:gap-6 p-4 text-lg leading-6 tracking-normal font-semibold text-white md:flex-row  md:p-0 w-full justify-between">
+                            <li>
+                                <a class="flex md:justify-center p-2.5 duration-200 hover:text-primary-500 md:w-36" href="javascript:;">About us</a>
+                            </li>
+                            <li class="relative group">
+                                <a @click="isSubMenuOpen = 'trading'" class="flex md:justify-center p-2.5 duration-200 hover:text-primary-500 md:w-36" href="javascript:;">Surrey Steel Trading</a>
+                                <div x-show="isSubMenuOpen == 'trading' || window.innerWidth > 767" class="md:invisible md:opacity-0 duration-200 group-hover:visible group-hover:opacity-100 md:w-60 md:left-1/2 md:-translate-x-1/2 md:absolute md:pt-3.5">
+                                    <ul class="bg-dark-500  top-full px-5 py-3 rounded-xl divide-y divide-white/25 after:hidden md:after:block after:w-5 after:h-5 after:rotate-45 after:absolute after:top-1 after:bg-dark-500 after:left-1/2 after:-translate-x-1/2 after:rounded">
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="site-survey.html">Site Survey</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">3D CAD</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Fabrication</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Delivery/Crane Lift</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Products</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group">
+                                <a @click="isSubMenuOpen = 'installation'" class="flex md:justify-center p-2.5 duration-200 hover:text-primary-500 md:w-36" href="javascript:;">Surrey Steel Installations</a>
+                                <div x-show="isSubMenuOpen == 'installation' || window.innerWidth > 767" class="md:invisible md:opacity-0 duration-200 group-hover:visible group-hover:opacity-100 md:w-60 md:left-1/2 md:-translate-x-1/2 md:absolute md:pt-3.5">
+                                    <ul class="bg-dark-500  top-full px-5 py-3 rounded-xl divide-y divide-white/25 after:hidden md:after:block after:w-5 after:h-5 after:rotate-45 after:absolute after:top-1 after:bg-dark-500 after:left-1/2 after:-translate-x-1/2 after:rounded">
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">What we do</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="relative group">
+                                <a @click="isSubMenuOpen = 'architectural'" class="flex md:justify-center p-2.5 duration-200 hover:text-primary-500 md:w-36" href="javascript:;">Surrey Steel Architectural</a>
+                                <div x-show="isSubMenuOpen == 'architectural' || window.innerWidth > 767" class="md:invisible md:opacity-0 duration-200 group-hover:visible group-hover:opacity-100 md:w-60 md:left-1/2 md:-translate-x-1/2 md:absolute md:pt-3.5">
+                                    <ul class="bg-dark-500  top-full px-5 py-3 rounded-xl divide-y divide-white/25 after:hidden md:after:block after:w-5 after:h-5 after:rotate-45 after:absolute after:top-1 after:bg-dark-500 after:left-1/2 after:-translate-x-1/2 after:rounded">
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Staircases</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Balustrades</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gates & Railings</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Juliet Balconies</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Pergolas & outdoor living</a>
+                                        </li>
+                                        <li>
+                                            <a class="block py-2 duration-200 hover:text-primary-500" href="javascript:;">Gallery</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="flex md:justify-center p-2.5 duration-200 hover:text-primary-500 md:w-36" href="javascript:;">Contact Us</a>
+                            </li>
+                            <li class="block md:hidden">
+                                <a class="text-2xl p-2.5 font-bold flex md:justify-center text-white duration-200 hover:text-primary-500" href="tel:02089474722">02089474722</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <button @click.stop="isMenuOpen = !isMenuOpen" type="button" class="ml-auto flex md:hidden">
+                        <img
+                        class="w-10"
+                        src="assets/images/svg/icon-menu.svg"
+                        alt="icon"
+                        />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pb-10 md:pb-20">
+         <!-- Banner Section -->
+        <section class="bg-navy-500 overflow-hidden">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <div class="grid grid-cols-1 lg:grid-cols-2 relative">
+                    <div class="flex pr-20 lg:pr-0 flex-col pt-10 md:pt-14 pb-10 md:pb-16 lg:pb-20 relative z-10">
+                        <div class="animate-up relative flex flex-col justify-between px-6 py-8 md:px-10 md:py-10 h-[320px] md:h-[625px] after:border-[8px] md:after:border-[10px] after:absolute after:border-white after:inset-0 after:w-[120%] md:after:w-[110%] lg:after:w-[120%]">
+                          <h2 class="animate-up font-oswald text-white text-2xl md:text-4xl lg:text-5xl font-semibold leading-snug">Surrey Steels <br><span class="text-primary-500">Trading</span></h2>  
+                          <h1 id="animatedText" class="font-oswald text-transparent text-5xl md:text-8xl lg:text-large leading-none mt-auto">Products</h1>
+                        </div>
+                        <h2 class="animate-up font-oswald text-white text-2xl md:text-4xl lg:text-5xl leading-tight md:px-12 mt-6 md:mt-10">
+                          We offer a wide range of competitive and innovative solutions.
+                        </h2>
+                        <div class="animate-up flex justify-start md:px-12 mt-6 md:mt-10 lg:hidden">
+                            <a class="text-2xl md:text-3xl text-white font-semibold block bg-primary-500 px-8 md:px-10 lg:px-16 py-4 md:py-6 lg:py-8 rounded-xl duration-200 hover:bg-primary-600" href="javascript:;">Request Quote</a>
+                        </div>
+                    </div>
+                    <div class="w-24 right-0 lg:w-[50vw] h-full lg:h-[1000px] absolute lg:relative -mx-8 lg:mx-0">
+                        <div class="bg-gradient-to-t from-black absolute inset-0 lg:hidden"></div>
+                        <div class="parallax-image w-full h-full overflow-hidden">
+                            <img class="w-full h-full object-cover scale-125 origin-center" src="assets/images/header/2.jpeg" alt="poster"/>
+                        </div>
+                        <div class="animate-up absolute bottom-20 left-20 hidden lg:block">
+                            <a class="text-2xl md:text-3xl text-white font-semibold block bg-primary-500 px-8 md:px-10 lg:px-16 py-4 md:py-6 lg:py-8 rounded-xl duration-200 hover:bg-primary-600" href="javascript:;">Request Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      
+        <!-- Text Section -->
+        <section class="py-10 md:pt-14 md:pb-16">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 md:px-8 xl:px-12 2xl:px-40">
+                <article class="prose max-w-none prose-neutral-700 prose-lg md:prose-2xl prose-h1:font-oswald mb-14 animate-up">
+                    <p>Reprehendi, non quia crasse compositum illepedeve putetur, sed quia nuper,
+                      nec veniam antiquis, sed honorem et praemia posci. Recte necne crocum
+                      floresque perambulet Attae fabula si dubitem.</p>
+                    <p>Reprehendi, non quia crasse compositum illepedeve putetur, sed quia nuper,
+                        nec veniam antiquis, sed honorem et praemia posci. Recte necne crocum
+                        floresque perambulet Attae fabula si dubitem.</p>  
+                </article> 
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                  <div class="animate-up p-8 md:p-12 bg-navy-500">
+                      <h3 class="text-white font-oswald text-5xl md:text-6xl lg:text-[85px] leading-none font-light">Products</h3>
+                  </div>
+                  <div class="animate-up p-8 md:p-12 flex flex-col justify-center items-center gap-5 bg-dark-100">
+                      <img class="h-20 md:h-auto" src="assets/images/svg/icon-section.svg" alt="cart"/>
+                      <h4 class="font-oswald text-neutral-800 text-2xl md:text-[40px] md:leading-[45px] font-light">Sections</h4>
+                  </div>
+                  <div class="animate-up p-8 md:p-12 flex flex-col justify-center items-center gap-5 bg-dark-200">
+                      <img class="h-20 md:h-auto" src="assets/images/svg/icon-connection.svg" alt="time"/>
+                      <h4 class="font-oswald text-neutral-800 text-2xl md:text-[40px] md:leading-[45px] font-light">Connections</h4>
+                  </div>
+                  <div class="animate-up p-8 md:p-12 flex flex-col justify-center items-center gap-5 bg-dark-100">
+                      <img class="h-20 md:h-auto" src="assets/images/svg/icon-structures.svg" alt="building"/>
+                      <h4 class="font-oswald text-neutral-800 text-2xl md:text-[40px] md:leading-[45px] font-light">Structures</h4>
+                  </div>
+                  <div class="animate-up p-8 md:p-12 flex flex-col justify-center items-center gap-5 bg-dark-200">
+                      <img class="h-24 md:h-auto" src="assets/images/svg/icon-finishes.svg" alt="lift"/>
+                      <h4 class="font-oswald text-neutral-800 text-2xl md:text-[40px] md:leading-[45px] font-light">Finishes</h4>
+                  </div>
+              </div>         
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="bg-black py-10">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 lg:px-8 xl:px-12 2xl:px-40">
+                <div class="flex flex-col lg:flex-row items-center gap-6 lg:gap-0 justify-between">
+                    <a href="javascript:;">
+                        <img class="w-44 lg:w-48" src="assets/images/svg/logo.svg" alt="logo"/>
+                    </a>
+                    <div class="flex flex-col items-center lg:items-start text-white font-semibold text-center lg:text-start gap-1">
+                        <a class="text-3xl font-bold text-white duration-200 hover:text-primary-500 block" href="tel:02089474722">02089474722</a>
+                        <a class="text-2xl font-bold text-white duration-200 hover:text-primary-500 block" href="mailto:info@surreysteels.com">info@surreysteels.com</a>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <img class="w-8" src="assets/images/svg/icon-clock.svg" alt="clock"/>
+                        <div class="flex flex-col items-start text-white font-semibold text-lg">
+                            <p>Mon-Fri: 07.30-17.0</p>
+                            <p>Sat: 07.00-13.00</p>
+                        </div>
+                    </div>
+                    <ul class="flex items-center gap-4">
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-facebook.svg" alt="facebook"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-twitter.svg" alt="twitter"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-linkedin.svg" alt="linkedin"/>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <img class="w-8" src="assets/images/svg/icon-instagram.svg" alt="instagram"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white pt-5 pb-8">
+            <div class="mx-auto w-full max-w-screen-2xl px-4 lg:px-8 xl:px-12 2xl:px-40">
+                <div class="flex flex-col items-center lg:items-start">
+                    <img class="w-24" src="assets/images/footer/logos.jpg" alt="logos"/>
+                    <div class="text-sm flex flex-col lg:flex-row text-center lg:text-left items-center gap-4 lg:gap-8 mt-3">
+                        <p>© 2023 Surrey Steel Trading - All rights reserved</p>
+                        <p>Rainbow Industrial Estate, Station Approach Grand Drive, Raynes Park SW20 0JY</p>
+                        <a href="javascript:;">Terms & Conditions</a>
+                        <a href="javascript:;">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<!-- Alipine JS -->
+<script defer src="https://unpkg.com/alpinejs@3.11.1/dist/cdn.min.js"></script>
+<!-- GSAP JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/TextPlugin.min.js"></script>
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
+
+</html>
